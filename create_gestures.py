@@ -124,3 +124,5 @@ gesture_name = input("Enter gesture name/text: ")
 store_in_db(gesture_id, gesture_name) 
 #create subfolders of the saved images
 store_images(gesture_id)	
+
+https://codelabs.developers.google.com/codelabs/cpb102-txf-learning/index.html?index=..%2F..%2Findex#6

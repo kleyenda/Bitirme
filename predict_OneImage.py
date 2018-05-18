@@ -11,7 +11,7 @@ import numpy as np
 #this is to print pred_class in correct format by suppressing e-1...
 np.set_printoptions(precision=3, suppress=True)
 
-ModelPath = r'C:\Users\Karim El Guermai\Desktop\PROGRAMMING\FinalProject\Karim\CNN_model.h5'
+ModelPath = r'C:\Users\Karim El Guermai\Desktop\PROGRAMMING\FinalProject\cnn_model_evil.h5'
 imagePath = r'C:\Users\Karim El Guermai\Desktop\PROGRAMMING\FinalProject\Karim\Gestures_splitten\validate\C\3.jpg'
 #%%
 def get_image_size(imagePath):

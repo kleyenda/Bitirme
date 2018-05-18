@@ -16,9 +16,12 @@ from keras.optimizers import SGD
 from keras.losses import categorical_crossentropy
 from keras.layers import Dense, GlobalAveragePooling2D
 import os
+#this is used for plotting the model into a pnj file
+os.environ["PATH"] += os.pathsep + 'C:/Program Files (x86)/Graphviz2.38/bin/'
 from keras.callbacks import ModelCheckpoint
 from keras.callbacks import EarlyStopping
 from keras.models import Sequential
+#from keras.utils import plot_model
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -62,7 +65,7 @@ def generateValidatingData():
     validation_generator = create_img_generator().flow_from_directory(
             validate_dir,
             target_size = (Image_width, Image_height),
-			color_mode='grayscale',
+    			color_mode='grayscale',
             batch_size =batch_size,
             seed = 42)  
 #%%
@@ -85,6 +88,7 @@ def compileModel():
     global model
     model.compile(optimizer= 'adam', loss= 'categorical_crossentropy',
                   metrics=['accuracy'])
+   # plot_model(model, to_file="CNN_model.png", show_shapes=True, show_layer_names=True)
     #model.summary()
 #%%       
 def trainModel():
@@ -105,6 +109,7 @@ def trainModel():
             validation_data = validation_generator,
             validation_steps = num_validate_samples // batch_size,
             callbacks=callbacks_list)
+   
    # score = model.evaluate(train_generator, validation_generator, verbose=0)
    # print('Test loss:', score[0])
    # print('Test accuracy:', score[1])
